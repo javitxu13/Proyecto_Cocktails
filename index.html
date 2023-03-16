@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La coctelera</title>
     <link rel="stylesheet" href="style.css">
+    
   </head>
   <body>
     <a href="">
       <img id="logo" src="" />
     </a>
+    <h1 id="laboratorio">El Laboratorio del Cóctel</h1>
     <h1 id="titulo">¿Qué te apetece tomar?</h1>
 
     <input
@@ -37,11 +39,21 @@
       <div class="carousel-next"></div>
     </div>
 
-    <section id="recomendados">
+    <section id="myButton">
 
     </section>
 
+    <section id="recomendados">
+    </section>
+
+    <i class="fas fa-heart" onclick="toggleFavorito('producto1')"></i>
+
+    <section id="listaFav"></section>
 
     <script src= inicio.js ></script>
+    <script type="module" src="prueba/favoritos.js"></script>
+    <script src="prueba/carga.js"></script>
+
+ 
   </body>
 </html>

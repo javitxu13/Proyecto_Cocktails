@@ -1,3 +1,5 @@
+//import{getRecipes,addRecipe,deleteRecipe} from "prueba/menu.js";
+
 document.getElementById("Button_Cocktails").addEventListener("click", search);
 
 function search(event) {
@@ -6,7 +8,6 @@ function search(event) {
     let textEncoded = encodeURIComponent(text);
     let boton = event.target;
     let type = boton.id;
-
 
     const input = document.getElementById('Buscar');
     const list = document.getElementById('miLista').getElementsByTagName('li');
@@ -27,55 +28,12 @@ function search(event) {
 
 }
 
-/* function getCoctails(url) {
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const cocktails = data.hits
-        .map(cocktail => ({
-          name: cocktail.recipe.label,
-          image: cocktail.recipe.image,
-          ingredients: cocktail.recipe.ingredientLines,
-        }))
-        .slice(0, 10);
-        
-      const cocktailList = document.getElementById('cocktail-list');
-
-      cocktails.forEach(cocktail => {
-        const cocktailItem = document.createElement('div');
-        const cocktailName = document.createElement('h2');
-        const cocktailImage = document.createElement('img');
-        const cocktailLink = document.createElement('a'); // Nuevo
-
-        const words = cocktail.name.split(' ').slice(0, 3);
-        const shortenedName = words.join(' ');
-
-        cocktailName.textContent = shortenedName;
-        cocktailImage.src = cocktail.image;
-
-        // Agregar el evento click al elemento "a"
-        cocktailLink.addEventListener('click', (event) => {
-          event.preventDefault();
-          const ingredientsWindow = window.open('', 'Ingredientes', 'width=500,height=500');
-          ingredientsWindow.document.write(`<h2>${shortenedName} Ingredients</h2><p>${cocktail.ingredients.join('<br>')}</p>`);
-          ingredientsWindow.document.close();
-        });
-
-        cocktailLink.appendChild(cocktailImage);
-        cocktailItem.appendChild(cocktailName);
-        cocktailItem.appendChild(cocktailLink); // Modificado
-        cocktailList.appendChild(cocktailItem);
-      });
-    });
-} */
-
 
 function createImage(url) {
   const img = document.createElement('img');
   img.src = url;
   return img;
 }
-
 
 
 function getCoctails(url) {
@@ -88,7 +46,7 @@ function getCoctails(url) {
           image: cocktail.recipe.image,
           ingredients: cocktail.recipe.ingredientLines,
         }))
-        .slice(0, 10);
+        .slice(0, 20);
         
       const carouselItems = document.querySelector('.carousel-items');
       const carouselPrev = document.querySelector('.carousel-prev');
@@ -99,8 +57,12 @@ function getCoctails(url) {
         const carouselItem = document.createElement('div');
         const carouselLink = document.createElement('a');
         const carouselTitle = document.createElement('h3');
+
+        let iconoEstrella = document.createElement("i");
+        iconoEstrella.classList.add("fa","fa-heart");
+        
       
-        const words = cocktail.name.split(' ').slice(0, 3);
+        const words = cocktail.name.split(' ').slice(0, 5);
         const shortenedName = words.join(' ');
       
         carouselLink.addEventListener('click', (event) => {
@@ -108,9 +70,26 @@ function getCoctails(url) {
           const ingredientsWindow = window.open('', 'Ingredientes', 'width=500,height=500');
           ingredientsWindow.document.write(`<h2>${shortenedName} Ingredients</h2><p>${cocktail.ingredients.join('<br>')}</p>`);
           ingredientsWindow.document.close();
+        
+          const buttonHTML = '<button id="myButton">Guardar en favoritos</button>';
+          ingredientsWindow.document.querySelector('p').insertAdjacentHTML('afterend', buttonHTML);
+        
+          // Agregar un evento click al botón
+          ingredientsWindow.document.getElementById('myButton').addEventListener('click', () => {
+            // Guardar los ingredientes en el Local Storage con una clave única para cada receta
+            localStorage.setItem(shortenedName, JSON.stringify(cocktail.ingredients));
+            alert('Has guardado la receta a favoritos');
+          });
         });
       
-        carouselLink.appendChild(createImage(cocktail.image));
+        
+        
+        
+        
+        
+
+      
+        carouselLink.appendChild(createImage(cocktail.image)); 
         carouselTitle.textContent = shortenedName;
       
         // Crear un contenedor para el título y la imagen
@@ -120,6 +99,7 @@ function getCoctails(url) {
         // Agregar el título y la imagen al contenedor
         contentContainer.appendChild(carouselTitle);
         contentContainer.appendChild(carouselLink);
+        contentContainer.appendChild(iconoEstrella);
       
         // Agregar el contenedor al elemento de la diapositiva
         carouselItem.appendChild(contentContainer);
@@ -146,10 +126,7 @@ function getCoctails(url) {
 }
 
 
-
-
-
-/* function filtroClick(){}
+/* function filtroClick(url){}
 
 const comboBox = document.createElement("select");
 const option1 = document.createElement("option");
