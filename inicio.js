@@ -69,37 +69,14 @@ function search(event) {
     });
 } */
 
-/* function filtroClick(){}
-
-const comboBox = document.createElement("select");
-const option1 = document.createElement("option");
-const option2 = document.createElement("option");
-const option3 = document.createElement("option");
-
-
-option1.text = "1 palabra";
-option2.text = "2 palabras";
-option3.text = "3 palabras";
-
-
-comboBox.add(option1);
-comboBox.add(option2);
-comboBox.add(option3);
-
-
-const button = document.createElement("button");
-button.textContent = "Filtrar por palabras";
-button.addEventListener("click", filtroClick);
-
-document.body.appendChild(comboBox);
-document.body.appendChild(button);   */
-
 
 function createImage(url) {
   const img = document.createElement('img');
   img.src = url;
   return img;
 }
+
+
 
 function getCoctails(url) {
   fetch(url)
@@ -116,8 +93,9 @@ function getCoctails(url) {
       const carouselItems = document.querySelector('.carousel-items');
       const carouselPrev = document.querySelector('.carousel-prev');
       const carouselNext = document.querySelector('.carousel-next');
+      let currentIndex = 0;
 
-      cocktails.forEach(cocktail => {
+      cocktails.forEach((cocktail, index) => {
         const carouselItem = document.createElement('div');
         const carouselLink = document.createElement('a');
         const carouselTitle = document.createElement('h3');
@@ -149,36 +127,54 @@ function getCoctails(url) {
         carouselItems.appendChild(carouselItem);
       });
 
-      $('.carousel-items').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        prevArrow: carouselPrev,
-        nextArrow: carouselNext,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
+      // Agregar eventos para el botón "Prev"
+      carouselPrev.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          carouselItems.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
       });
 
-      // Agregar controladores de eventos de clic para los botones de anterior y siguiente
-      $('.carousel-prev').click(() => {
-        $('.carousel-items').slick('slickPrev');
+      // Agregar eventos para el botón "Next"
+      carouselNext.addEventListener('click', () => {
+        if (currentIndex < cocktails.length - 1) {
+          currentIndex++;
+          carouselItems.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
       });
-
-      $('.carousel-next').click(() => {
-        $('.carousel-items').slick('slickNext');
-      });
-    });
+  });
 }
+
+
+
+
+
+/* function filtroClick(){}
+
+const comboBox = document.createElement("select");
+const option1 = document.createElement("option");
+const option2 = document.createElement("option");
+const option3 = document.createElement("option");
+
+
+option1.text = "Lemon";
+option2.text = "Vodka";
+option3.text = "Mojito";
+
+
+comboBox.add(option1);
+comboBox.add(option2);
+comboBox.add(option3);
+
+
+const button = document.createElement("button");
+button.textContent = "Filtrar por Ingredientes";
+button.addEventListener("click", filtroClick);
+
+document.body.appendChild(comboBox);
+document.body.appendChild(button);    */
+
+
+
+
+

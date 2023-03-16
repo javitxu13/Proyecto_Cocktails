@@ -67,9 +67,9 @@
   position: absolute;
   margin-inline: 10px;
   top: 50%;
-  transform: translateY(750%);
+  transform: translateY(50%);
+  transform: translateX(50%);
   font-size: 30px;
-  color: #c41c1c;
   background-color: rgba(69, 131, 27, 0.5);
   width: 40px;
   height: 30px;
