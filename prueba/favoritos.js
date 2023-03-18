@@ -1,6 +1,4 @@
- import{getItem,getRecipes,addRecipe,deleteRecipe} from "../inicio"
- 
- 
+
 export function getRecipes(){
     let recipes = localStorage.getItem("recipes");
     if (recipes === null){

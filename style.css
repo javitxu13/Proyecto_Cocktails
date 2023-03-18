@@ -17,6 +17,11 @@ img{
 
 }
 
+#Seccion{
+  position: sticky;
+}
+
+
 
 
 #Buscar{
@@ -53,20 +58,14 @@ img{
   align-items: center;
 }
 .carousel-items {
-    display: flex;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
+display: flex;
     
   }
   
   .carousel-item {
-    flex: 0 0 auto;
     width: 100px;
     margin-right: 20px;
     margin-left: 20px;
-    
-    
   }
 
 .carousel-prev,
@@ -75,8 +74,6 @@ img{
   margin-inline: 10px;
   top: 50%;
   transform: translateY(50%);
-  transform: translateX(50%);
-  font-size: 30px;
   background-color: rgb(32, 25, 25);
   width: 40px;
   height: 30px;
@@ -85,7 +82,8 @@ img{
   align-items: center;
   cursor: pointer;
   transition: 0.4;
-  
+  border: 3px solid black;
+  border-radius: 20%;
  
 }
 
@@ -102,3 +100,11 @@ img{
     right: 0;
   }
 
+.container{
+  align-content:space-between;
+}
+  
+  #favorites-button {
+    bottom: 20px;
+    right: 20px;
+  }
