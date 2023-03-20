@@ -1,0 +1,77 @@
+
+@media (max-width: 500px) {
+
+
+    body {
+        background: url('R.jpeg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+   
+
+    #favorites-button{
+        background-color: rgb(4, 85, 61);
+        color: rgb(177, 46, 46);
+        margin-top: 0;
+        font-size: 12px;
+      }
+
+      #principal{
+        color: rgb(119, 40, 40);
+        font-size: 25px;
+        float: right;
+      }
+
+      #titulo{
+        color:  rgb(4, 85, 61);
+        font-size: 20px;
+        margin-bottom: 10px;
+       
+    
+    }
+
+#Buscar{
+    width: 37%;
+    color: rgb(0, 0, 0);
+    margin-left: 30%;
+    border-radius: 20px;
+   
+}
+
+#Button_Cocktails{
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    margin-left: 30%;
+    background-color: rgb(255, 208, 0);
+    border-radius: 30px ;
+
+}
+
+
+  #cocktail-list{
+    column-count: 2;
+  }
+
+
+  h2{
+    font-size: 20px;
+
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    margin-left: 10px;
+  }
+  
+  ul{
+    margin-left: 10px;
+    list-style:none;
+    font-size: 15px;
+    color: aliceblue;
+  
+  }
+  
+
+}
+    
