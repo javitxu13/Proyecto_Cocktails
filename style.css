@@ -1,50 +1,88 @@
-*{
-    background-color: rgb(156, 5, 5);
-    
+
+h3{
+  color: rgb(94, 172, 50);
+  -webkit-text-stroke: 1px rgb(232, 248, 6);
+ 
+  font-size: 23px;
+}
+
+body{
+  background-image: url(R.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+background-position: center;
+
 }
 
 img{
   width: 160px;
   margin: 20px;
-  
+  border-radius: 40px;
+}
+
+#principal{
+  color: rgb(28, 61, 9);
+  text-align: center;
+  font-size: 40px;
+  -webkit-text-stroke: 1px rgb(232, 248, 6);
+  float: right;
+
+ 
 }
 
 #titulo{
     margin-top: 10%;
     margin-left: 30%;
-    color: aliceblue;
-    font-size: 40px;
+    color: rgb(98, 221, 27);
+    font-size: 30px;
+    -webkit-text-stroke: 1px rgb(106, 112, 25);
 
 }
+
 
 #Seccion{
   position: sticky;
 }
 
+#fav{
+  color: rgb(98, 221, 27);
+  -webkit-text-stroke: 1px rgb(106, 112, 25);
+  
+}
+
+#favorites-button{
+  background-color: rgb(98, 221, 27);
+  -webkit-text-stroke: 1px rgb(106, 112, 25);
+  border-radius: 30px;
+  font-size: 20px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+
 
 
 
 #Buscar{
-    width: 40%;
-    color: aliceblue;
+    width: 37%;
+    color: rgb(0, 0, 0);
     margin-left: 30%;
-
    
 }
 
 #Button_Cocktails{
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin-top: 20px;
-    margin-left: 45%;
-    background-color: rgb(32, 82, 8);
+    margin-left: 30%;
+    background-color: rgb(98, 221, 27);
     border-radius: 30px ;
-    width: 130px;
     padding: 10px;
-    margin-bottom: 50px;
+
 }
 
 #Buscar::placeholder{
-    color: antiquewhite;
+    color: rgb(0, 0, 0);
 }
 #laboratorio{
   font-size: 80px;
@@ -53,58 +91,82 @@ img{
 
 }
 
+
+
 .carousel{
   text-align: center;
   align-items: center;
+  
 }
 .carousel-items {
-display: flex;
-    
-  }
-  
-  .carousel-item {
-    width: 100px;
-    margin-right: 20px;
-    margin-left: 20px;
-  }
+  display: flex;
+  align-items: center; /* Agregamos esta propiedad */
+}
+
+.carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+}
 
 .carousel-prev,
 .carousel-next {
   position: absolute;
-  margin-inline: 10px;
-  top: 50%;
-  transform: translateY(50%);
-  background-color: rgb(32, 25, 25);
-  width: 40px;
-  height: 30px;
+  top: 50%; /* Cambiamos el valor de top al 50% */
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(255, 255, 255);
+  font-size: 25px;
   display: flex;
   justify-content: center;
+  align-content: center;
   align-items: center;
   cursor: pointer;
-  transition: 0.4;
-  border: 3px solid black;
-  border-radius: 20%;
- 
+  transition: background-color 0.3s ease;
+  border-radius: 50px;
 }
+
+
 
 .carousel-prev:hover,
 .carousel-next:hover {
-  background-color: rgba(51, 255, 0, 0.8);
+  background-color: rgb(98, 221, 27);
 }
 
 .carousel-prev {
-    left: 0;
+    left: 20px;
   }
   
   .carousel-next {
-    right: 0;
+    right: 20px;
   }
 
 .container{
   align-content:space-between;
 }
+
+h2{
+
+  color: rgb(78, 78, 197);
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  margin-left: 10px;
+}
+
+ul{
+  margin-left: 10px;
+  list-style:none;
+  font-size: large;
+
+}
+
   
-  #favorites-button {
-    bottom: 20px;
-    right: 20px;
-  }
+button{
+  color: rgb(0, 0, 0);
+  background-color: rgb(78, 78, 197);
+  border-radius: 30px;
+  margin-left: 10px;
+  
+}
